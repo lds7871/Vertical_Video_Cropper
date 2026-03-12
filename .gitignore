@@ -1,0 +1,52 @@
+# Maven
+/target/
+*.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.eclipse
+.settings/
+.classpath
+.project
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Output files
+*.class
+*.log
+*.swp
+*.swo
+*~
+
+# Generated
+.metadata/
+build/
+dist/
+
+# Video files (备份)
+*.mp4.bak
+*.avi
+*.mov
+*.mkv
+
+# Temporary
+tmp/
+temp/
