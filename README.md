@@ -2,7 +2,7 @@
 
 &nbsp;&nbsp;一个用于将 **横屏 MP4** 视频裁切为 **9:16 竖屏格式** 的轻量级工具，适合短视频平台内容制作。基于 **Java + FFmpeg**。<br>
 <div style="text-align:center">
-  <img src="./说明/ShowGIF.gif" width="80%">
+  <img src="./说明/ShowGIF.gif" width="100%">
 </div>
 &nbsp;&nbsp;是的，当我想在剪辑软件里裁切视频的时候，我发现手头在用的两款，无论是 DaVinci 还是 Movavi 都没有直接裁切为9:16的选项,只有整个16:9画面放在中央然后上下留出巨量黑区...真是头疼。
 
