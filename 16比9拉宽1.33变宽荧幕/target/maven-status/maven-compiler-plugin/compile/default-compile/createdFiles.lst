@@ -1,0 +1,5 @@
+com\image\processor\DebugImageMetadata.class
+com\image\processor\ImageAspectRatioProcessor.class
+com\image\processor\JFIFDPIFixer.class
+com\image\processor\CheckImageDPI.class
+com\image\processor\CheckImageDPIv2.class
