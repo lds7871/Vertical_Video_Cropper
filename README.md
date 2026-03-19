@@ -1,19 +1,23 @@
-# <p style="color:#9ff">Vertical_Video_Cropper</p>
-
+## <p style="color:#9ff">横屏视频裁切9:16竖屏画面</p>
 &nbsp;&nbsp;一个用于将 **横屏 MP4** 视频裁切为 **9:16 竖屏格式** 的轻量级工具，适合短视频平台内容制作。基于 **Java + FFmpeg**。<br>
 <div style="text-align:center">
-  <img src="./说明/ShowGIF.gif" width="100%">
+  <img src="./说明/横转竖.gif" width="100%">
 </div>
 &nbsp;&nbsp;是的，当我想在剪辑软件里裁切视频的时候，我发现手头在用的两款，无论是 DaVinci 还是 Movavi 都没有直接裁切为9:16的选项,只有整个16:9画面放在中央然后上下留出巨量黑区...真是头疼。
-
-## 功能实现
 
 - 将横屏视频裁切为竖屏（9:16）
 - 支持自定义裁切偏移（左 / 中 / 右）
 
+## <p style="color:#9ff">16:9图片拉伸横向1.33倍率适配2.35:1宽荧幕</p>
+&nbsp;&nbsp;目的是将 **1.33** 倍宽荧幕镜头拍摄的 **16:9** 图片重新拉伸回正确比例。<br>
+<div style="text-align:center">
+  <img src="./说明/133拉伸.gif" width="100%">
+</div>
+
+
 ## 使用说明
 ### 直接使用
-- 下载右方`Releses`的`VVC+版本号`内的`video-crop-tool-portable.zip`，解压后直接运行cmd即可。
+- 下载右方`Releses`的`VVC+版本号`内的`免配置直接使用.zip`，解压后直接运行cmd即可。
 ### 手动配置依赖运行(非必要)
 - 下载源码，并运行所属`B1`的批处理文件
 - 请参阅说明:[使用教程与手动下载说明](./说明/使用教程与手动下载说明.md)
