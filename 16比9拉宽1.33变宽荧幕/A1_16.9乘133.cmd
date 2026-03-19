@@ -21,10 +21,10 @@ if not exist "target\image-aspect-ratio-processor-1.0.0.jar" (
 )
 
 echo 检查输入目录...
-if not exist "ImgIn_133" (
-    echo ✗ 错误: 输入目录 ImgIn_133 不存在
+if not exist "FImgIn_133" (
+    echo ✗ 错误: 输入目录 FImgIn_133 不存在
     echo.
-    echo 请创建 ImgIn_133 目录并放入图像文件
+    echo 请创建 FImgIn_133 目录并放入图像文件
     echo.
     pause
     exit /b 1
@@ -43,13 +43,13 @@ echo ========================================
 echo 处理完成！
 echo =======================================.
 echo.
-echo 输出目录: ImgOut_133
+echo 输出目录: FImgOut_133
 echo.
 echo 验证输出DPI...
 echo.
 
 REM 检查输出DPI
-for %%F in (ImgOut_133\*.jpg) do (
+for %%F in (FImgOut_133\*.jpg) do (
     echo 检查: %%~nF
     java -cp target/image-aspect-ratio-processor-1.0.0.jar com.image.processor.CheckImageDPIv2 "%%F" 2>nul
     echo.

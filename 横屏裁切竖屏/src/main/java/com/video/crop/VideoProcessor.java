@@ -48,7 +48,7 @@ public class VideoProcessor {
 
         // 获取视频信息
         System.out.println("正在读取视频信息...");
-        VideoInfo info = getVideoInfo(inputPath);
+        FVideoInfo info = getFVideoInfo(inputPath);
 
         System.out.println("原始分辨率: " + info.width + "x" + info.height);
         // System.out.println("视频时长: " + formatDuration(info.duration));
@@ -78,7 +78,7 @@ public class VideoProcessor {
     /**
      * 使用FFprobe获取视频信息
      */
-    private VideoInfo getVideoInfo(String inputPath) throws IOException, InterruptedException {
+    private FVideoInfo getFVideoInfo(String inputPath) throws IOException, InterruptedException {
         // 使用 ffprobe 命令获取视频信息
         String[] command = {
                 "ffprobe",
@@ -101,12 +101,12 @@ public class VideoProcessor {
             int exitCode = process.waitFor();
             if (exitCode != 0 || infoline == null || infoline.isEmpty()) {
                 // 如果ffprobe失败，尝试用ffmpeg
-                return getVideoInfoUsingFFmpeg(inputPath);
+                return getFVideoInfoUsingFFmpeg(inputPath);
             }
 
             // 解析输出: width,height,duration
             String[] parts = infoline.split(",");
-            VideoInfo info = new VideoInfo();
+            FVideoInfo info = new FVideoInfo();
             try {
                 info.width = Integer.parseInt(parts[0].trim());
                 info.height = Integer.parseInt(parts[1].trim());
@@ -114,7 +114,7 @@ public class VideoProcessor {
                 String durationStr = parts[2].trim();
                 info.duration = (int) Double.parseDouble(durationStr);
             } catch (Exception e) {
-                return getVideoInfoUsingFFmpeg(inputPath);
+                return getFVideoInfoUsingFFmpeg(inputPath);
             }
 
             return info;
@@ -122,7 +122,7 @@ public class VideoProcessor {
             // ffprobe 找不到，尝试 ffmpeg
             if (e.getMessage() != null && e.getMessage().contains("找不到指定的文件")) {
                 System.out.println("[提示] ffprobe 未安装或未在系统 PATH 中");
-                return getVideoInfoUsingFFmpeg(inputPath);
+                return getFVideoInfoUsingFFmpeg(inputPath);
             }
             throw e;
         }
@@ -131,7 +131,7 @@ public class VideoProcessor {
     /**
      * 使用FFmpeg获取视频信息（备选方案）
      */
-    private VideoInfo getVideoInfoUsingFFmpeg(String inputPath) throws IOException, InterruptedException {
+    private FVideoInfo getFVideoInfoUsingFFmpeg(String inputPath) throws IOException, InterruptedException {
         String[] command = {
                 "ffmpeg",
                 "-i", inputPath
@@ -143,7 +143,7 @@ public class VideoProcessor {
             Process process = processBuilder.start();
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            VideoInfo info = new VideoInfo();
+            FVideoInfo info = new FVideoInfo();
             
             // 正则表达式用于提取分辨率和时长
             Pattern resolutionPattern = Pattern.compile("(\\d+)x(\\d+)");
@@ -421,12 +421,12 @@ public class VideoProcessor {
     /**
      * 视频信息
      */
-    private static class VideoInfo {
+    private static class FVideoInfo {
         int width;
         int height;
         int duration;
 
-        VideoInfo() {
+        FVideoInfo() {
             this.width = 0;
             this.height = 0;
             this.duration = 0;

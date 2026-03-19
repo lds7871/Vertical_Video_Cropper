@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 /**
  * MP4视频中心9:16比例裁切工具
- * 功能: 从 VideoIn 文件夹读取MP4文件，选择序号进行裁切，输出到 VideoOut 文件夹
+ * 功能: 从 FVideoIn 文件夹读取MP4文件，选择序号进行裁切，输出到 FVideoOut 文件夹
  */
 public class VideoCropTool {
 
-    private static final String INPUT_DIR = "VideoIn";
-    private static final String OUTPUT_DIR = "VideoOut";
+    private static final String INPUT_DIR = "FVideoIn";
+    private static final String OUTPUT_DIR = "FVideoOut";
 
     public static void main(String[] args) {
         System.out.println("========================================");
@@ -26,11 +26,11 @@ public class VideoCropTool {
             // 创建必要的文件夹
             ensureDirectories();
 
-            // 列出 VideoIn 文件夹下的所有MP4文件
+            // 列出 FVideoIn 文件夹下的所有MP4文件
             List<File> mp4Files = listMP4Files(INPUT_DIR);
 
             if (mp4Files.isEmpty()) {
-                System.out.println("错误: VideoIn 文件夹中没有找到 MP4 文件！");
+                System.out.println("错误: FVideoIn 文件夹中没有找到 MP4 文件！");
                 System.out.println("请将 MP4 文件放在: " + new File(INPUT_DIR).getAbsolutePath());
                 return;
             }

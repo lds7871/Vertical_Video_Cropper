@@ -37,8 +37,8 @@ REM 创建新目录结构
 echo 创建目录结构...
 mkdir "%PACKAGE_DIR%"
 mkdir "%PACKAGE_DIR%\target"
-mkdir "%PACKAGE_DIR%\VideoIn"
-mkdir "%PACKAGE_DIR%\VideoOut"
+mkdir "%PACKAGE_DIR%\FVideoIn"
+mkdir "%PACKAGE_DIR%\FVideoOut"
 
 REM 复制必要文件
 echo 复制文件...
@@ -55,8 +55,8 @@ echo.
 echo 文件夹包含:
 echo   - target\           编译好的 JAR 文件
 echo   - jre\              Java 运行环境（首次配置时自动下载）
-echo   - VideoIn\          输入视频文件夹
-echo   - VideoOut\         输出视频文件夹
+echo   - FVideoIn\          输入视频文件夹
+echo   - FVideoOut\         输出视频文件夹
 echo   - portable-setup.bat 配置脚本（首次使用）
 echo   - portable-run.bat   运行脚本（日常使用）
 echo.

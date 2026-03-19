@@ -34,8 +34,8 @@ public class ImageAspectRatioProcessor {
     private static final double STRETCH_FACTOR = 1.33;
 
     public static void main(String[] args) throws IOException {
-        String inputDir = "ImgIn_133";
-        String outputDir = "ImgOut_133";
+        String inputDir = "FImgIn_133";
+        String outputDir = "FImgOut_133";
 
         processImages(inputDir, outputDir);
     }
